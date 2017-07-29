@@ -4,6 +4,7 @@ require "logstash/filters/base"
 require "logstash/namespace"
 
 require File.expand_path(File.dirname(__FILE__))<<"/LoggingExtension-1.0.jar"
+require File.expand_path(File.dirname(__FILE__))<<"/AwsJavaSdkCore.jar"
 
 module Sample
 	include_package "com.tavisca.oski.loggingextension.compression"
