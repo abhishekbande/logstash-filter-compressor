@@ -24,5 +24,7 @@ Gem::Specification.new do |s|
   # Jar dependencies
   s.requirements << "jar 'com.tavisca.oski.loggingextension.compression', '~> 0.1'"
   s.requirements << "jar 'LoggingExtension-1.0', '~> 0.1'"
-  s.add_runtime_dependency 'jar-dependencies'  
+  s.requirements << "jar 'com.amazonaws.util.Base64', '~> 0.1'"   
+  s.requirements << "jar 'aws-java-sdk-core-1.9.9', '~> 0.1'"
+  s.add_runtime_dependency 'jar-dependencies'
 end
