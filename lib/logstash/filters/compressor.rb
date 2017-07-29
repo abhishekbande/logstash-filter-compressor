@@ -37,7 +37,7 @@ class LogStash::Filters::Compressor < LogStash::Filters::Base
 		#return unless filter?(event)
 		
 		
-		if !event.get('message').nil == false
+		if event.get('message') == false
 			if @type =="snappy"
 				compressorobj=Sample::Snappy_Compressor.new
 			elsif @type == "gzip"
