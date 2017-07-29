@@ -37,7 +37,7 @@ class LogStash::Filters::Compressor < LogStash::Filters::Base
 		#return unless filter?(event)
 		
 		
-		if event["message"]
+		if !event.get('message').nil == false
 			if @type =="snappy"
 				compressorobj=Sample::Snappy_Compressor.new
 			elsif @type == "gzip"
@@ -45,9 +45,9 @@ class LogStash::Filters::Compressor < LogStash::Filters::Base
 			end
 				
 			if @action =="compression"					
-				event["message"] = compressorobj.CompressAndEncodeToBase64String(event["message"])	
+				event.set('message') = compressorobj.CompressAndEncodeToBase64String(event.get('message'))	
 			elsif @action == "decompression"
-				event["message"] = compressorobj.DecodeBase64StringAndDeCompress(event["message"])
+				event.set('message') = compressorobj.DecodeBase64StringAndDeCompress(event.get('message'))
 			end
 		end
 		
